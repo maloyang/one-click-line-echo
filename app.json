@@ -1,0 +1,13 @@
+{
+    "name": "flask line-bot echo demo",
+    "description": "a basic line-bot with echo function base on flask @ heroku demo",
+    "repository": "https://github.com/maloyang/one-click-line-echo",
+    "env": {
+        "LINE_CHANNEL_SECRET": {
+          "description": "Input your 'Channel secret'"
+        },
+        "LINE_CHANNEL_ACCESS_TOKEN": {
+            "description": "Input your 'Channel access token'"
+        }
+    } 
+}
