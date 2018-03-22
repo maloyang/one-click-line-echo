@@ -1,24 +1,29 @@
-# one-click-line-echo
-a one-click demo to deploy a line-echo bot to heroku
+# One-Click Demo2
 
-## auto deploy this demo
+### 這一個Demo主要是說明如何在git上做一個one-click就可以自動佈署到Heroku的line-bot專案按鈕
+### 相較於 [Demo1](https://github.com/maloyang/one-click-flask-hello) ，這一個Demo多了讓使用者輸入「環境變數」的部份
+
+- 可以按以下的按鈕進行自動佈署本App
+- one-click button to auto deploy this demo
 
 [![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy)
 
-## 這一個rep主要是memo一下怎麼在github上做一個可以讓自己，或別人one-click直接佈署到heroku的按鈕
-## 相較於上一個[demo: one-click-flask-hello](https://github.com/maloyang/one-click-flask-hello)，這一個demo多了讓使用者輸入環境變數的功能
-## 因為line bot一定要輸入你申請到的bot的"LINE_CHANNEL_SECRET"和"LINE_CHANNEL_ACCESS_TOKEN"，因此請確實輸入，這樣你的line-bot才會正常運作
+
+### 說明如下
 - 如下，要加入這一段，就可以產生按鈕，可以參考[這邊](https://devcenter.heroku.com/articles/heroku-button)
 
-<code>
-  [![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy)
-</code>
 
-- 接著是在你的repo上根目錄下放一個 app.json 檔，格式如下
-- 因為這一次我們要加入環境變數，因此除了前三個是必要項，又加入了"env"這一個參數
+`[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy)`
 
-<code><pre>
-{
+
+- 這一個App有幾個元素，是一個App最基本的三個檔案：
+    - app.py: 主程式
+    - Procfile: App類型，如何啟動
+    - requirements.txt: 需要的套件
+    
+- 另外，在你的repo上根目錄下放一個 app.json 檔，格式如下，這邊多了「env」項目，裡面的「LINE_CHANNEL_SECRET」、「LINE_CHANNEL_ACCESS_TOKEN」是Line-bot API需要的東西，因此放環境變數讓佈署者填入，這樣就不用寫死在程式碼中：
+
+<pre><code>{
     "name": "flask line-bot echo demo",
     "description": "a basic line-bot with echo function base on flask @ heroku demo",
     "repository": "https://github.com/maloyang/one-click-line-echo",
@@ -31,9 +36,10 @@ a one-click demo to deploy a line-echo bot to heroku
         }
     } 
 }
-</pre></code>
+</code></pre>
 
-- 只要完成了以上的事，就可以做一個快速佈署鍵給大家使用!!
+
+- 只要完成了以上的事，就可以做一個快速佈署按鈕分享你的專案給大家使用!!
 - 以這一個demo為例，他會把你帶到heroku的畫面，假設你已經登入了，那動呈現的畫面如下
 
 ![line-bot-demo](https://imgur.com/V6UoAQY.png)
@@ -44,4 +50,5 @@ a one-click demo to deploy a line-echo bot to heroku
 ![要填入callback的address](https://imgur.com/FPU4acI.png)
 
 
-### 下一次再來記錄有加入add-on的deploy!
+### one-click教學part1 請參考[這邊](https://github.com/maloyang/one-click-flask-hello)。
+### one-click教學part3 請參考[這邊](https://github.com/maloyang/one-click-line-echo-db)。
